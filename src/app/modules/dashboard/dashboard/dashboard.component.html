@@ -1,0 +1,72 @@
+<nz-layout class="app-layout">
+  <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+    [nzTrigger]="null">
+    <div class="sidebar-logo">
+      <a href="https://ng.ant.design/" target="_blank">
+        <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+        <h1>La Fongonera</h1>
+      </a>
+    </div>
+    <ul nz-menu nzMode="inline" nzTheme="dark" [nzInlineCollapsed]="isCollapsed">
+      <li nz-menu-item nz-tooltip nzTooltipPlacement="right">
+        <span nz-icon nzType="menu"></span>
+        <span>Menú</span>
+      </li>
+      <li nz-menu-item nz-tooltip nzTooltipPlacement="right">
+        <span nz-icon nzType="ordered-list"></span>
+        <span>Órdenes</span>
+      </li>
+      <li nz-menu-item nz-tooltip nzTooltipPlacement="right">
+        <span nz-icon nzType="sliders"></span>
+        <span>Cobrar</span>
+      </li>
+      <!-- <li nz-submenu nzTitle="Navigation Two" nzIcon="appstore">
+        <ul>
+          <li nz-menu-item>Option 5</li>
+          <li nz-menu-item>Option 6</li>
+          <li nz-submenu nzTitle="Submenu">
+            <ul>
+              <li nz-menu-item>Option 7</li>
+              <li nz-menu-item>Option 8</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li nz-submenu nzTitle="Navigation Three" nzIcon="setting">
+        <ul>
+          <li nz-menu-item>Option 9</li>
+          <li nz-menu-item>Option 10</li>
+          <li nz-menu-item>Option 11</li>
+        </ul>
+      </li> -->
+    </ul>
+
+    <!--
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard" routerLink="view-orders">
+
+      </li>
+      <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a>Basic Form</a>
+          </li>
+        </ul>
+      </li>
+    </ul> -->
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+      <div class="app-header">
+        <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+          <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
+        </span>
+      </div>
+    </nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
